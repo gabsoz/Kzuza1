@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+   form(action='/auth/login', method='POST')
+      input(type='text', name='username', placeholder='Username')
+      input(type='password' name='password', placeholder='Password')
+      button(type='submit') Login
+      //if(req.message)
+      P #{message}
+      a.banner(href='/auth/signup') Sign Up!
+   form(action='', method='')
+      button(type='submit') facebook
+      button(type='submit') gmail
+
+
+
+
+
+

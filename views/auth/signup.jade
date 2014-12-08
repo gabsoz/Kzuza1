@@ -1,0 +1,21 @@
+
+extends ../layout
+block content
+   - errors = errors ? errors : {}
+   - body = body ? body : {}
+   form(action='/auth/signup', method='POST')
+      input(type='email', name='email', placeholder='Email')
+      if errors.email
+         div.text= errors.email.message
+      input(type='text', name='username', placeholder='userName')
+      if errors.username
+         div.text= errors.username.message
+      input(type='password', name='password', placeholder='password')
+      if errors.password
+         div.text= error.password.message
+      input(type='password', name='confirmPassword', placeholder='confirmPassword')
+      if errors.confirmPassword
+         div.text= errors.confirmPassword.message
+      input(type='text', name='firstName', placeholder='firstName')
+      input(type='text', name='lastName', placeholder='lastName')
+      button(type='submit') Sign Up!
