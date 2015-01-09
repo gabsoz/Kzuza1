@@ -1,16 +1,32 @@
 extends ../layout
 
+
 block content
-   form(action='/auth/login', method='POST')
-      input(type='text', name='username', placeholder='Username')
-      input(type='password' name='password', placeholder='Password')
-      button(type='submit') Login
-      //if(req.message)
-      P #{message}
-      a.banner(href='/auth/signup') Sign Up!
-   form(action='', method='')
-      button(type='submit') facebook
-      button(type='submit') gmail
+   div.row
+      form.col-xs-12.col-md-6.col-md-offset-2.pat.well(action='/auth/login', method='POST',)
+         fieldset
+            legend Login
+               div.form-group
+                  label.control-label(for="userName") UserName
+                  input.form-control.input-sm(type='text', name='username', placeholder='Username')
+               div.form-group
+                  label.control-label(for="passowrd") Password
+                  input.form-control.input-sm(type='password' name='password', placeholder='Password')
+            div.form-group
+               div.btn-group
+                  button.btn.btn-success.btn-sm(type='submit') Login
+                  a.btn.btn-default.btn-sm.disabled or
+                  a.btn.btn-default.btn-sm(href='/auth/signup') Sing Up!
+            //if(req.message)
+            P #{message}
+            //a.banner(href='/auth/signup') Sign Up!
+         form(action='', method='')
+            div.form-group
+               button.btn.btn-primary.btn-sm Sing in with facebook
+            div.form-group
+               button.btn.btn-danger.btn-sm Sing in with gMail
+            //button(type='submit') facebook
+            //button(type='submit') gmail
 
 
 
